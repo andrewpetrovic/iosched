@@ -118,6 +118,9 @@
     <!-- My Schedule -->
     <style name="Theme.IOSched.MySchedule" parent="Theme.IOSched" />
 
+    <style name="Theme.IOSched.MyTest" parent="Theme.IOSched"/>
+    <style name="Theme.IOSched.About" parent="Theme.IOSched.WithElevatedHeader"/>
+
     <!-- Intermediary theme for SessionDetails (so we can override it on large screens) -->
     <style name="Theme.IOSched.SessionDetails.Base" parent="Theme.IOSched">
         <item name="isFloatingWindow">false</item>

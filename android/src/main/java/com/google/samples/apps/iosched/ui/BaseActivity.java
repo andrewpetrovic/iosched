@@ -30,7 +30,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -113,6 +112,8 @@ public abstract class BaseActivity extends Activity implements
     protected static final int NAVDRAWER_ITEM_SETTINGS = 6;
     protected static final int NAVDRAWER_ITEM_EXPERTS_DIRECTORY = 7;
     protected static final int NAVDRAWER_ITEM_PEOPLE_IVE_MET = 8;
+    protected static final int NAVDRAWER_ITEM_TEST = 9;
+    protected static final int NAVDRAWER_ITEM_ABOUT = 10;
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
     protected static final int NAVDRAWER_ITEM_SEPARATOR = -2;
     protected static final int NAVDRAWER_ITEM_SEPARATOR_SPECIAL = -3;
@@ -127,7 +128,9 @@ public abstract class BaseActivity extends Activity implements
             R.string.navdrawer_item_sign_in,
             R.string.navdrawer_item_settings,
             R.string.navdrawer_item_experts_directory,
-            R.string.navdrawer_item_people_ive_met
+            R.string.navdrawer_item_people_ive_met,
+            R.string.navdrawer_test,
+            R.string.navdrawer_about
     };
 
     // icons for navdrawer items (indices must correspond to above array)
@@ -141,6 +144,8 @@ public abstract class BaseActivity extends Activity implements
             R.drawable.ic_drawer_settings,
             R.drawable.ic_drawer_experts,
             R.drawable.ic_drawer_people_met,
+            R.drawable.ic_drawer_test,
+            R.drawable.ic_drawer_about
     };
 
     // delay to launch nav drawer item, to allow close animation to play
@@ -404,7 +409,9 @@ public abstract class BaseActivity extends Activity implements
         mNavDrawerItems.add(NAVDRAWER_ITEM_SOCIAL);
         mNavDrawerItems.add(NAVDRAWER_ITEM_VIDEO_LIBRARY);
         mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR_SPECIAL);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_TEST);
         mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
+        mNavDrawerItems.add(NAVDRAWER_ITEM_ABOUT);
 
         createNavDrawerItems();
     }
@@ -780,10 +787,19 @@ public abstract class BaseActivity extends Activity implements
                 intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 break;
+            case NAVDRAWER_ITEM_TEST:
+                intent = new Intent(this, TESTActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case NAVDRAWER_ITEM_VIDEO_LIBRARY:
                 intent = new Intent(this, VideoLibraryActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            case NAVDRAWER_ITEM_ABOUT:
+                intent = new Intent(this, AAAAAAboutActivity.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -1261,7 +1277,7 @@ public abstract class BaseActivity extends Activity implements
     }
 
     private boolean isSpecialItem(int itemId) {
-        return itemId == NAVDRAWER_ITEM_SETTINGS;
+        return itemId == NAVDRAWER_ITEM_SETTINGS || itemId == NAVDRAWER_ITEM_ABOUT;
     }
 
     private boolean isSeparator(int itemId) {

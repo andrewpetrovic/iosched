@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BaseActivity</string>
+    <string name="navigation_drawer_item_show_zq">查看灾情</string>
+    <string name="navigation_drawer_item_show_contacts">通讯录</string>
+    <string name="navigation_drawer_item_show_map">查看地图</string>
+    <string name="navigation_drawer_item_download_data">下载离线数据</string>
+    <string name="navigation_drawer_item_about">关于</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_show_nav_menu">测试右滑菜单</string>
+    <string name="title_activity_zaiqing">查看灾情</string>
+    <string name="hello_zq">灾情界面</string>
+    <string name="title_activity_contacts">通讯录</string>
+    <string name="hello_contacts">通讯录界面</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_map">查看地图</string>
+    <string name="hello_map">地图界面</string>
+    <string name="title_activity_download_data">下载离线数据</string>
+    <string name="hello_download_data">地图界面</string>
+    <string name="title_activity_about">关于</string>
+    <string name="hello_about">关于界面</string>
+
+</resources>
